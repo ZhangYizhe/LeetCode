@@ -2,21 +2,24 @@ import UIKit
 
 class Solution {
     func plusOne(_ digits: [Int]) -> [Int] {
-        var num = 0;
-        var result = [Int]()
-        for (k, v) in digits.reversed().enumerated() {
-            num += v * Int(pow(Double(10), Double(k)))
+        var result = digits
+        result[result.count - 1] += 1
+        for k in stride(from: result.count - 1, to: -1, by: -1) {
+            print(k)
+            if result[k] == 10 {
+                result[k] = 0
+                if k-1 < 0 {
+                    result.insert(1, at: 0)
+                } else {
+                    result[k-1] += 1
+                }
+            } else {
+                break
+            }
         }
-        
-        num = num + 1
-        
-        for int in String(num) {
-            result.append(Int(String(int)) ?? 0)
-        }
-        
         return result
     }
 }
 
 
-print(Solution().plusOne([1,3,9]))
+print(Solution().plusOne([1,2,3]))
