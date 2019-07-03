@@ -4,8 +4,7 @@ class Solution {
     func plusOne(_ digits: [Int]) -> [Int] {
         var result = digits
         result[result.count - 1] += 1
-        for k in stride(from: result.count - 1, to: -1, by: -1) {
-            print(k)
+        for k in (0...(result.count - 1)).reversed() {
             if result[k] == 10 {
                 result[k] = 0
                 if k-1 < 0 {
