@@ -10,7 +10,7 @@
 
 
 
-[Details ](https://leetcode.com/submissions/detail/)
+[Details ]()
 
 运行结果
 
